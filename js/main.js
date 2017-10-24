@@ -1,54 +1,33 @@
-(function($){
-    var toTop = ($('#sidebar').height() - $(window).height()) + 60;
-    // Caption
-    $('.article-entry').each(function(i){
-        $(this).find('img').each(function(){
-            if ($(this).parent().hasClass('fancybox')) {
-                return;
-            }
-            var alt = this.alt;
-            if (alt) {
-                $(this).after('<span class="caption">' + alt + '</span>');
-            }
+$(document).ready(function() {
 
-            $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-        });
 
-        $(this).find('.fancybox').each(function(){
-            $(this).attr('rel', 'article' + i);
-        });
-    });
-    if ($.fancybox){
-        $('.fancybox').fancybox();
+  $('a.blog-button').click(function() {
+    // If already in blog, return early without animate overlay panel again.
+    if (location.hash && location.hash == "#blog") return;
+    if ($('.panel-cover').hasClass('panel-cover--collapsed')) return;
+    $('.main-post-list').removeClass('hidden');
+    currentWidth = $('.panel-cover').width();
+    if (currentWidth < 2000) {
+      $('.panel-cover').addClass('panel-cover--collapsed');
+    } else {
+      $('.panel-cover').css('max-width',currentWidth);
+      $('.panel-cover').animate({'max-width': '320px', 'width': '22%'}, 400, swing = 'swing', function() {} );
     }
 
-    // Profile card
-    $(document).on('click', function () {
-        $('#profile').removeClass('card');
-    }).on('click', '#profile-anchor', function (e) {
-        e.stopPropagation();
-        $('#profile').toggleClass('card');
-    }).on('click', '.profile-inner', function (e) {
-        e.stopPropagation();
-    });
+    
+  });
 
-    // To Top
-    if ($('#sidebar').length) {
-        $(document).on('scroll', function () {
-            if ($(document).width() >= 800) {
-                if(($(this).scrollTop() > toTop) && ($(this).scrollTop() > 0)) {
-                    $('#toTop').fadeIn();
-                    $('#toTop').css('left', $('#sidebar').offset().left);
-                } else {
-                    $('#toTop').fadeOut();
-                }
-            } else {
-                $('#toTop').fadeIn();
-                $('#toTop').css('right', 20);
-            }
-        }).on('click', '#toTop', function () {
-            $('body, html').animate({ scrollTop: 0 }, 600);
-        });
-    }
+  if (window.location.hash && window.location.hash == "#blog") {
+    $('.panel-cover').addClass('panel-cover--collapsed');
+    $('.main-post-list').removeClass('hidden');
+  }
 
-})(jQuery);
+  if (window.location.pathname.substring(0, 5) == "/tag/") {
+    $('.panel-cover').addClass('panel-cover--collapsed');
+  }
+
+  $('.btn-mobile-menu__icon').click(function() {
+    // 导航按钮被点击
+    // this.style.backgroundColor = '#fff'; 设置颜色后会自动消失
+  });  
+});
