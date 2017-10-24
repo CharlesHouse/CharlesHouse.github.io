@@ -1,11 +1,11 @@
 # Basic
 title: 孙超 
-subtitle: 个人站
-description: 欢迎来到我的个人站~
+subtitle: CharlesHouse
+description: 不会写代码的游客不是一个好厨子
 # 头像里面的标题
 avatarTitle: Charles
 # 头像里面的描述
-avatarDesc: iOS / 机器学习
+avatarDesc: RecordingLife
 url: "http://charleshouse.github.io"
 
 # Comment
@@ -15,8 +15,8 @@ comment:
 
 # Social
 social:
-    weibo:  
-    github: Charles
+    weibo: 2089515861
+    github: CharlesHouse
     # twitter: 
     mail: best_charles@outlook.com
 
@@ -27,9 +27,9 @@ social:
 
 # Google Analytics
 # 使用博客模板请去掉或者更换 id
-ga:
-    id: UA-84134159-3   
-    host: auto  
+#ga:
+#    id: UA-84134159-3   
+#    host: auto  
 
 
 # 《----------------- 上面的信息修改成你自己的 ---------------------------》
