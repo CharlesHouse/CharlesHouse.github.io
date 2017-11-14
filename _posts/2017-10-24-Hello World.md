@@ -25,8 +25,7 @@ tag: Life
 
 ---
 
-## 致谢
-本博客沿用 [leopard](https://github.com/leopardpan/leopardpan.github.io) 个人站模板，在此致谢
+**我很懒，但我会记得有空常更新的**
 
 ---
 
