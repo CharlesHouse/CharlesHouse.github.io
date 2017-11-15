@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Kubernetes安装"
+title:      "Kubernetes介绍与安装"
 date:       2017-11-14
 author:     "Charles"
 tags:
