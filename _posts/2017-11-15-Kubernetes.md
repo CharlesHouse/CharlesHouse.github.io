@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "Kubernetes Configuration"
+title:      "Kubernetes配置"
 subtitle:   "Kubernetes"
-date:       2017-11-13
+date:       2017-11-15
 author:     "Charles"
 tags:
     - Kubernetes
@@ -12,6 +12,11 @@ tags:
 
 [Kubernetes](https://kubernetes.io)是Google主导的自动化容器管理的开源平台，用于容器的部署、自动化调度和集群管理。本文将致力于kubernetes的配置和相关插件安装。另外为方便我之后的整理编辑，本文主体部分将用英文书写，反正也并没有几个人会真的研究这个 ：）
 
+Kubernetes架构图：
+<img src="\images\posts\Kubernetes\cluster.png" width='450'/>
+
+
+------------------------------------------------------------------------
 Kubernetes official website provides instruction for installing kubernetes and setting up a kubernetes cluster based on varies cloud platforms and different OS.
 Since kubernetes 1.4, ‘kubeadm’ is introduced to reduce the workload to install kubernetes cluster. Here we will bootstrap Clusters with kubeadm instead of installing each components manually.  
 Now let's start!
@@ -157,11 +162,7 @@ Here is the instructions about how to add it into Kubernetes Cluster:
 We can see the metrics through REST API at
 *Http://localhost:7575/api/v1/proxy/namespaces/kube-system/services/heapster/api/v1/model/debug/allkeys*
 
-
-
-
-
-
+------------------------------------------------------------------------------
 
 
 
